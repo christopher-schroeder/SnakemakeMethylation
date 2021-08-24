@@ -1,0 +1,7 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bwameth =0.2.2
+  - samblaster =0.1.26
+  - sambamba =0.8.0
