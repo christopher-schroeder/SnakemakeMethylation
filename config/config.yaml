@@ -1,0 +1,43 @@
+samples: config/samples.tsv
+
+units: config/units.tsv
+
+experiments: config/experiments.yaml
+
+igv_report:
+  activate: false
+
+ref:
+  # Number of chromosomes to consider for calling.
+  # The first n entries of the FASTA will be considered.
+  n_chromosomes: 25
+  # Ensembl species name
+  species: homo_sapiens
+  # Ensembl release
+  release: 100
+  # Genome build
+  build: GRCh38
+
+## quality control
+qc:
+  activate: true
+
+## methylation calling
+meth:
+  activate: true
+  
+## dmr calling
+dmrs:
+  metilene: true
+  experiments:
+    A-vs-B:
+      case: A
+      control: B
+
+## pca
+pca:
+  activate: true
+
+
+params:
+  cutadapt: "-m 10"
