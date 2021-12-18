@@ -22,6 +22,7 @@ rule bwameth_index:
         "logs/bwameth_index.log"
     resources:
         mem_mb=369000
+    cache: True
     conda:
         "../envs/bwameth.yaml"
     shell:

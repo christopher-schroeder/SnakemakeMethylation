@@ -8,16 +8,22 @@ ftp = FTP.RemoteProvider()
 
 samples = pd.read_csv(config["samples"], sep="\t", dtype={"sample_name": str, "group": str}).set_index("sample_name", drop=False).sort_index()
 
-with open(config["experiments"]) as file:
-    experiments = yaml.load(file, Loader=yaml.FullLoader)
+experiments = config["dmrs"]["experiments"]
 
+groups = samples["group"].unique()
 
 def get_case(wildcards):
-    return experiments[wildcards.experiment]["case"]
-
+    #return experiments[wildcards.experiment]["case"]
+    case = config["dmrs"]["experiments"][wildcards.experiment]["case"]
+    case_samples = samples[samples.group == case]["sample_name"]
+    return case_samples
+    
 
 def get_control(wildcards):
-    return experiments[wildcards.experiment]["control"]
+    #return experiments[wildcards.experiment]["control"]
+    control = config["dmrs"]["experiments"][wildcards.experiment]["control"]
+    control_samples = samples[samples.group == control]["sample_name"]
+    return control_samples
 
 
 def metilene_header(wildcards):
@@ -27,24 +33,22 @@ def metilene_header(wildcards):
 
 
 def get_final_output():
-    final_output = []
+    final_output = expand("results/mapped/{sample}.bam",
+        sample=samples["sample_name"])
 
-    if config["report"]["activate"]:
-        final_output.extend(expand("results/vcf-report/all.{event}/",
-                            event=config["calling"]["fdr-control"]["events"]))
-    else:
-        final_output.extend(expand("results/merged-calls/{group}.{event}.fdr-controlled.bcf",
-                            group=groups,
-                            event=config["calling"]["fdr-control"]["events"]))
+    if config["qc"]["activate"]:
+        final_output.extend(expand(["results/qc/conversion_rate/{sample}.tsv",
+            "results/qc/bamqc/{sample}/qualimapReport.html"], 
+            sample=samples["sample_name"]))
+    if config["meth"]["activate"]:
+        final_output.extend(expand("results/methylation/{sample}_CpG.bedGraph", 
+            sample=samples["sample_name"]))
+    if config["dmrs"]["metilene"]:
+        final_output.extend(expand("results/dmr/metilene/dmrs/{experiment}.table.tsv",
+            experiment=config["dmrs"]["experiments"]))
+    if config["pca"]["activate"]:
+        final_output.append("results/plots/pca.pdf")
 
-    if config["tables"]["activate"]:
-        final_output.extend(expand("results/tables/{group}.{event}.fdr-controlled.tsv",
-                            group=f,
-                            event=config["calling"]["fdr-control"]["events"]))
-        if config["tables"].get("generate_excel", False):
-            final_output.extend(expand("results/tables/{group}.{event}.fdr-controlled.xlsx",
-                            group=groups,
-                            event=config["calling"]["fdr-control"]["events"]))
     return final_output
 
 def _group_or_sample(row):
@@ -67,6 +71,12 @@ def pca_params(wildcards):
 def get_read_group(wildcards):
     """Denote sample name and platform in read group."""
     return r"--read-group '@RG\tID:{sample}\tSM:{sample}\tPL:{platform}'".format(
+        sample=wildcards.sample,
+        platform=samples.loc[wildcards.sample, "platform"])
+
+def get_read_group_biscuit(wildcards):
+    """Denote sample name and platform in read group."""
+    return r"-R '@RG\tID:{sample}\tSM:{sample}\tPL:{platform}'".format(
         sample=wildcards.sample,
         platform=samples.loc[wildcards.sample, "platform"])
 

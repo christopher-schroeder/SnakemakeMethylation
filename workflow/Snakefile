@@ -1,0 +1,28 @@
+from snakemake.utils import min_version
+min_version("6.0.5")
+
+import yaml
+
+configfile: "config/config.yaml"
+
+# Allow users to fix the underlying OS via singularity.
+# container: "docker://continuumio/miniconda3"
+
+include: "rules/common.smk"
+include: "rules/ref.smk"
+include: "rules/trimming.smk"
+include: "rules/mapping.smk"
+include: "rules/calling.smk"
+include: "rules/qc.smk"
+include: "rules/metilene.smk"
+include: "rules/annotation.smk"
+include: "rules/pca.smk"
+
+
+
+
+# print(expand("results/dmr/metilene/dmrs/{experiment}.table.tsv", experiment=experiments))
+
+rule all:
+    input:
+        get_final_output(),

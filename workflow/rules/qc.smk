@@ -18,7 +18,7 @@ rule bamqc:
 rule chh_bias:
     input:
         bam="results/mapped/{sample}.bam",
-        bai="results/mapped/{sample}.bai",
+        bai="results/mapped/{sample}.bam.bai",
         ref="resources/genome.fasta",
     output:
         bed="results/qc/chh_bias/{sample}.chh_bias.bed"
