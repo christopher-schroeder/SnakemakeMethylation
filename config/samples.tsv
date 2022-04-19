@@ -1,5 +1,96 @@
-sample_name	platform	group	pca_symbol
-sample1	ILLUMINA	A	a
-sample2	ILLUMINA	A	a
-sample3	ILLUMINA	B	b
-sample4	ILLUMINA	B	b
+sample_name	platform	entity	sample_type	response	group	pca_group
+S001	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S002	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S003	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S004	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S005	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S006	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S007	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S008	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S009	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S010	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S011	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S012	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S013	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S015	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S016	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S017	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S018	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S019	ILLUMINA	NSCLC-stage IV	Plasma	Long	NSCLC-stage_IV_Plasma_Long	
+S020	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S021	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S022	ILLUMINA	NSCLC-stage IV	Plasma	Short	NSCLC-stage_IV_Plasma_Short	
+S023	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S024	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage I-III_Plasma_Resected	
+S025	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S026	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S027	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S028	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S029	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S030	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S031	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S032	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S033	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S034	ILLUMINA	Healthy plasma	Plasma	Healthy	Healthy_Plasma	
+S035	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S036	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S037	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S038	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S039	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S040	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S041	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S042	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S043	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S044	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S045	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S046	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S047	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S048	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S049	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S050	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S051	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S052	ILLUMINA	NSCLC-stage I-III	Plasma	Resected	NSCLC-stage_I-III_Plasma_Resected	
+S053	ILLUMINA	PDAC	Plasma	Long	PDAC_Plasma_Long	
+S054	ILLUMINA	PDAC	Plasma	Long	PDAC_Plasma_Long	
+S055	ILLUMINA	PDAC	Plasma	Short	PDAC_Plasma_Short	
+S056	ILLUMINA	PDAC	Plasma	Short	PDAC_Plasma_Short	
+S057	ILLUMINA	PDAC	Plasma	Long	PDAC_Plasma_Long	
+S058	ILLUMINA	PDAC	Plasma	Short	PDAC_Plasma_Short	
+S059	ILLUMINA	PDAC	Plasma	Short	PDAC_Plasma_Short	
+S060	ILLUMINA	PDAC	Plasma	Long	PDAC_Plasma_Long	
+S061	ILLUMINA	PDAC	Plasma	ND	PDAC_Plasma_ND	
+S062	ILLUMINA	PDAC	Plasma	ND	PDAC_Plasma_ND	
+S063	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S064	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S065	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S066	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S067	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S068	ILLUMINA	CRC	Plasma	Short	CRC_Plasma_Short	
+S069	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S070	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S071	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S072	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S073	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S074	ILLUMINA	CRC	Plasma	Long	CRC_Plasma_Long	
+S075	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S076	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S077	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S078	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S079	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S080	ILLUMINA	Lung Tumor Stage I-III	Tissue	Resected	Lung_Tumor_Stage_I-III_Tissue_Resected	
+S081	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S082	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S083	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S084	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S085	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S086	ILLUMINA	Non-tumor lung	Tissue	Resected	Non-tumor_lung_Tissue_Resected	
+S087	ILLUMINA	Melanoma	Plasma	Short	Melanoma_Plasma_Short	
+S088	ILLUMINA	Melanoma	Plasma	Short	Melanoma_Plasma_Short	
+S089	ILLUMINA	Melanoma	Plasma	Long	Melanoma_Plasma_Long	
+S090	ILLUMINA	Melanoma	Plasma	Short	Melanoma_Plasma_Short	
+S091	ILLUMINA	Melanoma	Plasma	Short	Melanoma_Plasma_Short	
+S092	ILLUMINA	Melanoma	Plasma	Long	Melanoma_Plasma_Long	
+S093	ILLUMINA	Melanoma	Plasma	Short	Melanoma_Plasma_Short	
+S094	ILLUMINA	Melanoma	Plasma	Long	Melanoma_Plasma_Long	
+S095	ILLUMINA	Melanoma	Plasma	Long	Melanoma_Plasma_Long	
+S096	ILLUMINA	Melanoma	Plasma	Long	Melanoma_Plasma_Long	

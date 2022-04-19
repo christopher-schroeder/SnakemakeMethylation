@@ -17,6 +17,8 @@ rule generate_metilene_input:
         "results/dmr/metilene/input/{experiment}.bg"
     params:
         header=metilene_header
+    conda:
+        "../envs/bedtools.yaml"
     shell:
         """(echo -e {params.header} & bedtools unionbedg -i {input.case} {input.control} -filler "." | cut -f 1,2,4-100) > {output}"""
 
@@ -28,13 +30,17 @@ rule call_dmr_metilene:
         "results/dmr/metilene/input/{experiment}.bg"
     output:
         "results/dmr/metilene/dmrs_unfiltered/{experiment}.tsv"
+    log:
+        "logs/dmr/metilene/call/{experiment}.log"
     conda:
         "../envs/metilene.yaml"
     params:
-        minimum_diff=0.4,
-        minimum_cgps=4,
+        minimum_diff=config["dmrs"]["metilene"]["min_diff"],
+        minimum_cgps=config["dmrs"]["metilene"]["min_cpg"],
+        min_n_group_A = 2,
+        min_n_group_B = 2,
     shell:
-        "metilene -t {threads} --mincpgs {params.minimum_cgps} --minMethDiff {params.minimum_diff} -a case_ -b control_ {input} > {output}"
+        "metilene -t {threads} -X {params.min_n_group_A} -Y {params.min_n_group_B} --mincpgs {params.minimum_cgps} --minMethDiff {params.minimum_diff} -a case_ -b control_ {input} > {output}"
 
 
 rule filter_pvalue_metilene:

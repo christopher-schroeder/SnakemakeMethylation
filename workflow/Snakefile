@@ -17,11 +17,7 @@ include: "rules/qc.smk"
 include: "rules/metilene.smk"
 include: "rules/annotation.smk"
 include: "rules/pca.smk"
-
-
-
-
-# print(expand("results/dmr/metilene/dmrs/{experiment}.table.tsv", experiment=experiments))
+include: "rules/plotting.smk"
 
 rule all:
     input:

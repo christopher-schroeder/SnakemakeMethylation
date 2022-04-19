@@ -20,7 +20,7 @@ ref:
 
 ## quality control
 qc:
-  activate: true
+  activate: false
 
 ## methylation calling
 meth:
@@ -28,15 +28,54 @@ meth:
   
 ## dmr calling
 dmrs:
-  metilene: true
+  metilene:
+    activate: true
+    min_cpg: 3
+    min_diff: 0.1
   experiments:
-    A-vs-B:
-      case: A
-      control: B
+    plasma_vs_healthy_plasma:
+      case:
+        - NSCLC-stage_IV_Plasma_Long
+        - NSCLC-stage_IV_Plasma_Short
+        - NSCLC-stage_I-III_Plasma_Resected
+        - PDAC_Plasma_Long
+        - PDAC_Plasma_Short
+        - PDAC_Plasma_ND
+        - CRC_Plasma_Short
+        - CRC_Plasma_Long
+        - Melanoma_Plasma_Short
+        - Melanoma_Plasma_Long
+      control:
+        - Healthy_Plasma
+    tumor_vs_healthy_tissue:
+      case:
+        - Lung_Tumor_Stage_I-III_Tissue_Resected
+      control:
+        - Non-tumor_lung_Tissue_Resected
+    NSCLC-stage_IV_Plasma_long_vs_short:
+      case:
+        - NSCLC-stage_IV_Plasma_Long
+      control:
+        - NSCLC-stage_IV_Plasma_Short
+    PDAC_Plasma_long_vs_short:
+      case:
+        - PDAC_Plasma_Long
+      control:
+        - PDAC_Plasma_Short
+    CRC_Plasma_long_vs_short:
+      case:
+        - CRC_Plasma_Long
+      control:
+        - CRC_Plasma_Short
+    Melanoma_long_vs_short:
+      case:
+        - Melanoma_Plasma_Long
+      control:
+        - Melanoma_Plasma_Short
 
 ## pca
 pca:
-  activate: true
+  activate: false
 
 
 params:

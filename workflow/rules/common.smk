@@ -14,15 +14,15 @@ groups = samples["group"].unique()
 
 def get_case(wildcards):
     #return experiments[wildcards.experiment]["case"]
-    case = config["dmrs"]["experiments"][wildcards.experiment]["case"]
-    case_samples = samples[samples.group == case]["sample_name"]
+    case_groups = config["dmrs"]["experiments"][wildcards.experiment]["case"]
+    case_samples = samples[samples.group.isin(case_groups)]["sample_name"]
     return case_samples
     
 
 def get_control(wildcards):
     #return experiments[wildcards.experiment]["control"]
-    control = config["dmrs"]["experiments"][wildcards.experiment]["control"]
-    control_samples = samples[samples.group == control]["sample_name"]
+    control_groups = config["dmrs"]["experiments"][wildcards.experiment]["control"]
+    control_samples = samples[samples.group.isin(control_groups)]["sample_name"]
     return control_samples
 
 
@@ -43,12 +43,13 @@ def get_final_output():
     if config["meth"]["activate"]:
         final_output.extend(expand("results/methylation/{sample}_CpG.bedGraph", 
             sample=samples["sample_name"]))
-    if config["dmrs"]["metilene"]:
+    if config["dmrs"]["metilene"]["activate"]:
         final_output.extend(expand("results/dmr/metilene/dmrs/{experiment}.table.tsv",
             experiment=config["dmrs"]["experiments"]))
     if config["pca"]["activate"]:
         final_output.append("results/plots/pca.pdf")
 
+    final_output.append(expand("results/dmr/metilene/plots/{experiment}", experiment=experiments))
     return final_output
 
 def _group_or_sample(row):
